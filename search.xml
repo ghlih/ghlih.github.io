@@ -146,28 +146,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Aliyun OSS</title>
-    <url>/2021/05/19/Java/Aliyun-OSS/</url>
-    <content><![CDATA[<p>AliyunOSS 使用方法</p>
-<p>pom.xml</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.aliyun.oss<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>aliyun-sdk-oss<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.9.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><escape><span id="more"></span></escape></p>
-<p>application.yml</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">aliyun:</span></span><br><span class="line">  <span class="attr">oss:</span></span><br><span class="line">    <span class="attr">access-key-id:</span> </span><br><span class="line">    <span class="attr">access-key-secret:</span> </span><br><span class="line">    <span class="attr">bucket-domain:</span> </span><br><span class="line">    <span class="attr">bucket-name:</span> <span class="string">hual</span></span><br><span class="line">    <span class="attr">end-point:</span> </span><br></pre></td></tr></table></figure>
-<p>OSSProperites.class</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;aliyun.oss&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OSSProperties</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String endPoint;</span><br><span class="line">    <span class="keyword">private</span> String bucketName;</span><br><span class="line">    <span class="keyword">private</span> String accessKeyId;</span><br><span class="line">    <span class="keyword">private</span> String accessKeySecret;</span><br><span class="line">    <span class="keyword">private</span> String bucketDomain;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RespBean <span class="title">uploadFileToOss</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">            String endpoint,</span></span></span><br><span class="line"><span class="params"><span class="function">            String accessKeyId,</span></span></span><br><span class="line"><span class="params"><span class="function">            String accessKeySecret,</span></span></span><br><span class="line"><span class="params"><span class="function">            String bucketName,</span></span></span><br><span class="line"><span class="params"><span class="function">            String bucketDomain,</span></span></span><br><span class="line"><span class="params"><span class="function">            InputStream inputStream,</span></span></span><br><span class="line"><span class="params"><span class="function">            String originalName</span></span></span><br><span class="line"><span class="params"><span class="function">    )</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建OSSClient实例</span></span><br><span class="line">        OSS ossClient = <span class="keyword">new</span> OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//生成上传文件的目录</span></span><br><span class="line">        String folderName = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyyMMdd&quot;</span>).format(<span class="keyword">new</span> Date());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 生成上传文件在OSS服务器上保存时的文件名</span></span><br><span class="line">        <span class="comment">// 原始文件名：beautfulgirl.jpg</span></span><br><span class="line">        <span class="comment">// 生成文件名：wer234234efwer235346457dfswet346235.jpg</span></span><br><span class="line">        <span class="comment">// 使用UUID生成文件主体名称</span></span><br><span class="line">        String fileMainName = UUID.randomUUID().toString().replace(<span class="string">&quot;-&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 从原始文件名中获取文件扩展名</span></span><br><span class="line">        String extensionName = originalName.substring(originalName.lastIndexOf(<span class="string">&quot;.&quot;</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 使用目录、文件主体名称、文件扩展名称拼接得到对象名称</span></span><br><span class="line">        String objectName = folderName + <span class="string">&quot;/&quot;</span> + fileMainName + extensionName;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 调用OSS客户端对象的方法上传文件并获取响应结果数据</span></span><br><span class="line">            PutObjectResult putObjectResult = ossClient.putObject(bucketName, objectName, inputStream);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 从响应结果中获取具体响应消息</span></span><br><span class="line">            ResponseMessage responseMessage = putObjectResult.getResponse();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 根据响应状态码判断请求是否成功</span></span><br><span class="line">            <span class="keyword">if</span>(responseMessage == <span class="keyword">null</span>) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 拼接访问刚刚上传的文件的路径</span></span><br><span class="line">                String ossFileAccessPath = bucketDomain + <span class="string">&quot;/&quot;</span> + objectName;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 当前方法返回成功</span></span><br><span class="line">                <span class="keyword">return</span> RespBean.ok(<span class="string">&quot;更新成功！&quot;</span>,ossFileAccessPath);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 获取响应状态码</span></span><br><span class="line">                <span class="keyword">int</span> statusCode = responseMessage.getStatusCode();</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 如果请求没有成功，获取错误消息</span></span><br><span class="line">                String errorMessage = responseMessage.getErrorResponseAsString();</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 当前方法返回失败</span></span><br><span class="line">                <span class="keyword">return</span> RespBean.error(<span class="string">&quot;当前响应状态码=&quot;</span>+statusCode+<span class="string">&quot; 错误消息=&quot;</span>+errorMessage);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 当前方法返回失败</span></span><br><span class="line">            <span class="keyword">return</span> RespBean.error(e.getMessage());</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(ossClient != <span class="keyword">null</span>) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 关闭OSSClient。</span></span><br><span class="line">                ossClient.shutdown();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>OSS</tag>
-        <tag>Java</tag>
-        <tag>Upload</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ArrayList的扩容机制</title>
     <url>/2021/04/20/Java/arraylist-resize/</url>
     <content><![CDATA[<blockquote>
@@ -211,8 +189,8 @@
         <category>Tech</category>
       </categories>
       <tags>
-        <tag>Java</tag>
         <tag>ArrayList</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -294,17 +272,25 @@
       </tags>
   </entry>
   <entry>
-    <title>xxxMapper.xml放在java包下打包被忽略</title>
-    <url>/2021/05/06/Project/xxxMapper.xml-package-setup/</url>
-    <content><![CDATA[<p>xxxMapper.xml放在src/main/java 下不会被打包,pom.xml中添加配置</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/java<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    <title>Aliyun OSS</title>
+    <url>/2021/05/19/Java/Aliyun-OSS/</url>
+    <content><![CDATA[<p>AliyunOSS 使用方法</p>
+<p>pom.xml</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss --&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.aliyun.oss<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>aliyun-sdk-oss<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.9.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><escape><span id="more"></span></escape></p>
+<p>application.yml</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">aliyun:</span></span><br><span class="line">  <span class="attr">oss:</span></span><br><span class="line">    <span class="attr">access-key-id:</span> </span><br><span class="line">    <span class="attr">access-key-secret:</span> </span><br><span class="line">    <span class="attr">bucket-domain:</span> </span><br><span class="line">    <span class="attr">bucket-name:</span> <span class="string">hual</span></span><br><span class="line">    <span class="attr">end-point:</span> </span><br></pre></td></tr></table></figure>
+<p>OSSProperites.class</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@ConfigurationProperties(prefix = &quot;aliyun.oss&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OSSProperties</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String endPoint;</span><br><span class="line">    <span class="keyword">private</span> String bucketName;</span><br><span class="line">    <span class="keyword">private</span> String accessKeyId;</span><br><span class="line">    <span class="keyword">private</span> String accessKeySecret;</span><br><span class="line">    <span class="keyword">private</span> String bucketDomain;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RespBean <span class="title">uploadFileToOss</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">            String endpoint,</span></span></span><br><span class="line"><span class="params"><span class="function">            String accessKeyId,</span></span></span><br><span class="line"><span class="params"><span class="function">            String accessKeySecret,</span></span></span><br><span class="line"><span class="params"><span class="function">            String bucketName,</span></span></span><br><span class="line"><span class="params"><span class="function">            String bucketDomain,</span></span></span><br><span class="line"><span class="params"><span class="function">            InputStream inputStream,</span></span></span><br><span class="line"><span class="params"><span class="function">            String originalName</span></span></span><br><span class="line"><span class="params"><span class="function">    )</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建OSSClient实例</span></span><br><span class="line">        OSS ossClient = <span class="keyword">new</span> OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//生成上传文件的目录</span></span><br><span class="line">        String folderName = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyyMMdd&quot;</span>).format(<span class="keyword">new</span> Date());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 生成上传文件在OSS服务器上保存时的文件名</span></span><br><span class="line">        <span class="comment">// 原始文件名：beautfulgirl.jpg</span></span><br><span class="line">        <span class="comment">// 生成文件名：wer234234efwer235346457dfswet346235.jpg</span></span><br><span class="line">        <span class="comment">// 使用UUID生成文件主体名称</span></span><br><span class="line">        String fileMainName = UUID.randomUUID().toString().replace(<span class="string">&quot;-&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 从原始文件名中获取文件扩展名</span></span><br><span class="line">        String extensionName = originalName.substring(originalName.lastIndexOf(<span class="string">&quot;.&quot;</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 使用目录、文件主体名称、文件扩展名称拼接得到对象名称</span></span><br><span class="line">        String objectName = folderName + <span class="string">&quot;/&quot;</span> + fileMainName + extensionName;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 调用OSS客户端对象的方法上传文件并获取响应结果数据</span></span><br><span class="line">            PutObjectResult putObjectResult = ossClient.putObject(bucketName, objectName, inputStream);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 从响应结果中获取具体响应消息</span></span><br><span class="line">            ResponseMessage responseMessage = putObjectResult.getResponse();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 根据响应状态码判断请求是否成功</span></span><br><span class="line">            <span class="keyword">if</span>(responseMessage == <span class="keyword">null</span>) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 拼接访问刚刚上传的文件的路径</span></span><br><span class="line">                String ossFileAccessPath = bucketDomain + <span class="string">&quot;/&quot;</span> + objectName;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 当前方法返回成功</span></span><br><span class="line">                <span class="keyword">return</span> RespBean.ok(<span class="string">&quot;更新成功！&quot;</span>,ossFileAccessPath);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 获取响应状态码</span></span><br><span class="line">                <span class="keyword">int</span> statusCode = responseMessage.getStatusCode();</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 如果请求没有成功，获取错误消息</span></span><br><span class="line">                String errorMessage = responseMessage.getErrorResponseAsString();</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 当前方法返回失败</span></span><br><span class="line">                <span class="keyword">return</span> RespBean.error(<span class="string">&quot;当前响应状态码=&quot;</span>+statusCode+<span class="string">&quot; 错误消息=&quot;</span>+errorMessage);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 当前方法返回失败</span></span><br><span class="line">            <span class="keyword">return</span> RespBean.error(e.getMessage());</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(ossClient != <span class="keyword">null</span>) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 关闭OSSClient。</span></span><br><span class="line">                ossClient.shutdown();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Tech</category>
       </categories>
       <tags>
-        <tag>project</tag>
-        <tag>xml</tag>
+        <tag>Java</tag>
+        <tag>OSS</tag>
+        <tag>Upload</tag>
       </tags>
   </entry>
   <entry>
@@ -321,140 +307,6 @@
       </categories>
       <tags>
         <tag>spring security</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>vue环境安装和项目结构介绍</title>
-    <url>/2021/05/05/Vue/vue-environment-intall-and-project-structure-instruction/</url>
-    <content><![CDATA[<h1 id="基本环境搭建"><a class="markdownIt-Anchor" href="#基本环境搭建"></a> 基本环境搭建</h1>
-<p>首先需要安装两个东西：</p>
-<ol>
-<li>NodeJS</li>
-<li>npm</li>
-</ol>
-<p>直接搜索下载 NodeJS 即可，安装成功之后，npm 也就有了。安装成功之后，可以 在 cmd 命令中验证是否安装成功：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">D:\&gt;node -v</span><br><span class="line">v14.16.1</span><br><span class="line">D:\&gt;npm -v</span><br><span class="line">6.14.12</span><br></pre></td></tr></table></figure>
-<p><escape><span id="more"></span></escape></p>
-<p>NodeJS 安装成功之后，接下来安装 Vue的工具：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g vue-cli   <span class="comment"># 只需要第一次安装时执行</span></span><br><span class="line">vue init webpack my-project  <span class="comment"># 使用webpack模板创建一个vue项目</span></span><br><span class="line"><span class="built_in">cd</span> my-project <span class="comment">#进入到项目目录中</span></span><br><span class="line">npm install  <span class="comment"># 下载依赖（如果在项目创建的最后一步选择了自动执行npm install，则该步骤可以省略）</span></span><br><span class="line">npm run dev <span class="comment"># 启动项目</span></span><br></pre></td></tr></table></figure>
-<p>启动成功后，浏览器输入  <code>http://localhost:8080</code> 查看页面</p>
-<p><strong>执行 <code>npm install</code> 命令时，默认使用的是国外的下载源 ，可以通过如下代码配置为使用淘宝的镜像：</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<br/>
-<h1 id="vue-项目结构介绍"><a class="markdownIt-Anchor" href="#vue-项目结构介绍"></a> Vue 项目结构介绍</h1>
-<p>Vue 项目创建完成后，使用 Web Storm 打开项目，项目目录如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">|-build</span><br><span class="line">|-config</span><br><span class="line">|-node_modules</span><br><span class="line">|-src</span><br><span class="line">|-static</span><br><span class="line">|-.babelrc</span><br><span class="line">|-.editorconfig</span><br><span class="line">|-.gitignore</span><br><span class="line">|-.postcssrc.js</span><br><span class="line">|-index.html</span><br><span class="line">|-package.json</span><br><span class="line">|-package-lock.json</span><br><span class="line">|-README.md</span><br></pre></td></tr></table></figure>
-<ol>
-<li>build 文件夹，用来存放项目构建脚本</li>
-<li>config 中存放项目的一些基本配置信息，最常用的就是端口转发</li>
-<li>node_modules 这个目录存放的是项目的所有依赖，即 npm install 命令下载下来的文件</li>
-<li>src 这个目录下存放项目的源码，即开发者写的代码放在这里</li>
-<li>static 用来存放静态资源</li>
-<li>index.html 则是项目的首页，入口页，也是整个项目唯一的HTML页面</li>
-<li>package.json 中定义了项目的所有依赖，包括开发时依赖和发布时依赖</li>
-</ol>
-<p>对于开发者来说，以后 99.99% 的工作都是在 src 中完成的，src 中的文件目录如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">|-src</span><br><span class="line">||-assets</span><br><span class="line">||-components</span><br><span class="line">||-router</span><br><span class="line">||-App.vue</span><br><span class="line">||-main.js</span><br></pre></td></tr></table></figure>
-<ol>
-<li>assets 目录用来存放资产文件</li>
-<li>components 目录用来存放组件（一些可复用，非独立的页面），当然开发者也可以在 components 中直接创建完整页面。</li>
-<li>推荐在 components 中存放组件，另外单独新建一个 page 文件夹，专门用来放完整页面。</li>
-<li>router 目录中，存放了路由的js文件</li>
-<li>App.vue 是一个Vue组件，也是项目的第一个Vue组件</li>
-<li>main.js相当于Java中的main方法，是整个项目的入口js</li>
-</ol>
-<p>main.js 内容如下：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;./App&#x27;</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">&#x27;./router&#x27;</span></span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span></span><br><span class="line"><span class="comment">/* eslint-disable no-new */</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">  router,</span><br><span class="line">  <span class="attr">components</span>: &#123; App &#125;,</span><br><span class="line">  <span class="attr">template</span>: <span class="string">&#x27;&lt;App/&gt;&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<ol>
-<li>在main.js 中，首先导入 Vue 对象</li>
-<li>导入 App.vue ，并且命名为 App</li>
-<li>导入router，注意，由于router目录下路由默认文件名为 index.js ，因此可以省略</li>
-<li>所有东西都导入成功后，创建一个Vue对象，设置要被Vue处理的节点是 ‘#app’，’#app’ 指提前在index.html 文件中定义的一个div</li>
-<li>将 router 设置到 vue 对象中，这里是一个简化的写法，完整的写法是 router:router，如果 key/value 一模一样，则可以简写。</li>
-<li>声明一个组件 App，App 这个组件在一开始已经导入到项目中了，但是直接导入的组件无法直接使用，必须要声明。</li>
-<li>template 中定义了页面模板，即将 App 组件中的内容渲染到 ‘#app’ 这个div 中。</li>
-</ol>
-<p>项目启动成功后，看到的页面效果定义在 App.vue 中</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;img src=&quot;./assets/logo.png&quot;&gt;</span><br><span class="line">    &lt;router-view/&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;App&#x27;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">#app &#123;</span><br><span class="line">  font-family: &#x27;Avenir&#x27;, Helvetica, Arial, sans-serif;</span><br><span class="line">  -webkit-font-smoothing: antialiased;</span><br><span class="line">  -moz-osx-font-smoothing: grayscale;</span><br><span class="line">  text-align: center;</span><br><span class="line">  color: #2c3e50;</span><br><span class="line">  margin-top: 60px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>App.vue 是一个vue组件，这个组件中包含三部分内容：1.页面模板（template）；2.页面脚本（script）；3.页面样式（style）</li>
-<li>页面模板中，定义了页面的 HTML 元素，这里定义了两个，一个是一张图片，另一个则是一个 router-view</li>
-<li>页面脚本主要用来实现当前页面数据初始化、事件处理等等操作</li>
-<li>页面样式就是针对 template 中 HTML 元素的页面美化操作</li>
-</ol>
-<p>需要额外解释的是，router-view，这个指展示路由页面的位置，可以简单理解为一个占位符，这个占位符展示的内容将根据当前具体的 URL 地址来定。具体展示的内容，要参考路由表，即 router/index.js 文件，该文件如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import Vue from &#x27;vue&#x27;</span><br><span class="line">import Router from &#x27;vue-router&#x27;</span><br><span class="line">import HelloWorld from &#x27;@/components/HelloWorld&#x27;</span><br><span class="line">Vue.use(Router)</span><br><span class="line">export default new Router(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: &#x27;/&#x27;,</span><br><span class="line">      name: &#x27;HelloWorld&#x27;,</span><br><span class="line">      component: HelloWorld</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<ol>
-<li>
-<p>这个文件中，首先导入了Vue对象、Router对象以及 HelloWorld 组件，</p>
-</li>
-<li>
-<p>创建一个Router对象，并定义路由表</p>
-</li>
-<li>
-<p>这里定义的路由表，path为 <code>/</code> ，对应的组件为 HelloWorld，即浏览器地址为 <code>/</code> 时，在router-view位置显示 HelloWorld 组件</p>
-<br/>
-</li>
-</ol>
-<h1 id="项目运行和编译"><a class="markdownIt-Anchor" href="#项目运行和编译"></a> 项目运行和编译</h1>
-<p>运行: <strong>npm run dev</strong>,这么大一个前端项目，肯定没法直接发布运行，当开发者完成项目开发后，将 cmd 命令行定位到当前项目目录，然后执行如下命令对项目进行打包：</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">npm <span class="builtin-name">run</span> build</span><br></pre></td></tr></table></figure>
-<p>打包成功后，当前项目目录下会生成一个 dist 文件夹，这个文件夹中有两个文件，分别是 index.html 和 static ，index.html 页面就是我们 SPA 项目中唯一的 HTML 页面了，static 中则保存了编译后的 js、css等文件，项目发布时，可以使用 nginx 独立部署 dist 中的静态文件，也可以将静态文件拷贝到 Spring Boot 项目的 static 目录下，然后对 Spring Boot 项目进行编译打包发布。<br/><br/><br />
-<a href="http://www.javaboy.org/2019/0419/springboot-vue.html">copy from http://www.javaboy.org/</a></p>
-]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue CLI安装</title>
-    <url>/2021/05/05/Vue/vuecli-install/</url>
-    <content><![CDATA[<p><a href="https://cli.vuejs.org//zh/guide/">Vue CLI 文档</a><br />
-<br/></p>
-<blockquote>
-<p>关于旧版本</p>
-<p>Vue CLI 的包名称由 <code>vue-cli</code> 改成了 <code>@vue/cli</code>。 如果你已经全局安装了旧版本的 <code>vue-cli</code> (1.x 或 2.x)，你需要先通过 <code>npm uninstall vue-cli -g</code> 或 <code>yarn global remove vue-cli</code> 卸载它。</p>
-</blockquote>
-<blockquote>
-<p>Node 版本要求</p>
-<p>Vue CLI 4.x 需要 <a href="https://nodejs.org/">Node.js</a> v8.9 或更高版本 (推荐 v10 以上)。你可以使用 <a href="https://github.com/tj/n">n</a>，<a href="https://github.com/creationix/nvm">nvm</a> 或 <a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a> 在同一台电脑中管理多个 Node 版本。</p>
-<p>可以使用下列任一命令安装这个新的包：</p>
-</blockquote>
-<p><escape><span id="more"></span></escape></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br><span class="line"><span class="comment"># OR</span></span><br><span class="line">yarn global add @vue/cli</span><br></pre></td></tr></table></figure>
-<p>安装之后，你就可以在命令行中访问 <code>vue</code> 命令。你可以通过简单运行 <code>vue</code>，看看是否展示出了一份所有可用命令的帮助信息，来验证它是否安装成功。</p>
-<p>你还可以用这个命令来检查其版本是否正确：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue --version</span><br></pre></td></tr></table></figure>
-<h3 id=""><a class="markdownIt-Anchor" href="#"></a> <a href="https://cli.vuejs.org/zh/guide/installation.html#%E5%8D%87%E7%BA%A7">#</a>升级</h3>
-<p>如需升级全局的 Vue CLI 包，请运行：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm update -g @vue/cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">yarn global upgrade --latest @vue/cli</span><br></pre></td></tr></table></figure>
-<h4 id="-2"><a class="markdownIt-Anchor" href="#-2"></a> <a href="https://cli.vuejs.org/zh/guide/installation.html#%E9%A1%B9%E7%9B%AE%E4%BE%9D%E8%B5%96">#</a>项目依赖</h4>
-<p>上面列出来的命令是用于升级全局的 Vue CLI。如需升级项目中的 Vue CLI 相关模块（以 <code>@vue/cli-plugin-</code> 或 <code>vue-cli-plugin-</code> 开头），请在项目目录下运行 <code>vue upgrade</code>：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">用法： upgrade [options] [plugin-name]</span><br><span class="line"></span><br><span class="line">（试用）升级 Vue CLI 服务及插件</span><br><span class="line"></span><br><span class="line">选项：</span><br><span class="line">  -t, --to &lt;version&gt;    升级 &lt;plugin-name&gt; 到指定的版本</span><br><span class="line">  -f, --from &lt;version&gt;  跳过本地版本检测，默认插件是从此处指定的版本升级上来</span><br><span class="line">  -r, --registry &lt;url&gt;  使用指定的 registry 地址安装依赖</span><br><span class="line">  --all                 升级所有的插件</span><br><span class="line">  --next                检查插件新版本时，包括 alpha/beta/rc 版本在内</span><br><span class="line">  -h, --help            输出帮助内容</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>windows快捷键</title>
-    <url>/2021/05/05/Windows/windows-shortkey/</url>
-    <content><![CDATA[<br/>
-- sysdm.cpl: 系统设置
-<br/>
-]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>windows</tag>
-        <tag>shortkey</tag>
       </tags>
   </entry>
   <entry>
@@ -489,6 +341,20 @@ PowerShell默认的执行策略就是“Restricted”，禁止任何脚本的执
       <tags>
         <tag>windows</tag>
         <tag>PowerShell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>xxxMapper.xml放在java包下打包被忽略</title>
+    <url>/2021/05/06/Project/xxxMapper.xml-package-setup/</url>
+    <content><![CDATA[<p>xxxMapper.xml放在src/main/java 下不会被打包,pom.xml中添加配置</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/java<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>project</tag>
+        <tag>xml</tag>
       </tags>
   </entry>
   <entry>
@@ -783,6 +649,140 @@ PowerShell默认的执行策略就是“Restricted”，禁止任何脚本的执
       <tags>
         <tag>web</tag>
         <tag>http</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>windows快捷键</title>
+    <url>/2021/05/05/Windows/windows-shortkey/</url>
+    <content><![CDATA[<br/>
+- sysdm.cpl: 系统设置
+<br/>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>windows</tag>
+        <tag>shortkey</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue环境安装和项目结构介绍</title>
+    <url>/2021/05/05/Vue/vue-environment-intall-and-project-structure-instruction/</url>
+    <content><![CDATA[<h1 id="基本环境搭建"><a class="markdownIt-Anchor" href="#基本环境搭建"></a> 基本环境搭建</h1>
+<p>首先需要安装两个东西：</p>
+<ol>
+<li>NodeJS</li>
+<li>npm</li>
+</ol>
+<p>直接搜索下载 NodeJS 即可，安装成功之后，npm 也就有了。安装成功之后，可以 在 cmd 命令中验证是否安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">D:\&gt;node -v</span><br><span class="line">v14.16.1</span><br><span class="line">D:\&gt;npm -v</span><br><span class="line">6.14.12</span><br></pre></td></tr></table></figure>
+<p><escape><span id="more"></span></escape></p>
+<p>NodeJS 安装成功之后，接下来安装 Vue的工具：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g vue-cli   <span class="comment"># 只需要第一次安装时执行</span></span><br><span class="line">vue init webpack my-project  <span class="comment"># 使用webpack模板创建一个vue项目</span></span><br><span class="line"><span class="built_in">cd</span> my-project <span class="comment">#进入到项目目录中</span></span><br><span class="line">npm install  <span class="comment"># 下载依赖（如果在项目创建的最后一步选择了自动执行npm install，则该步骤可以省略）</span></span><br><span class="line">npm run dev <span class="comment"># 启动项目</span></span><br></pre></td></tr></table></figure>
+<p>启动成功后，浏览器输入  <code>http://localhost:8080</code> 查看页面</p>
+<p><strong>执行 <code>npm install</code> 命令时，默认使用的是国外的下载源 ，可以通过如下代码配置为使用淘宝的镜像：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<br/>
+<h1 id="vue-项目结构介绍"><a class="markdownIt-Anchor" href="#vue-项目结构介绍"></a> Vue 项目结构介绍</h1>
+<p>Vue 项目创建完成后，使用 Web Storm 打开项目，项目目录如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">|-build</span><br><span class="line">|-config</span><br><span class="line">|-node_modules</span><br><span class="line">|-src</span><br><span class="line">|-static</span><br><span class="line">|-.babelrc</span><br><span class="line">|-.editorconfig</span><br><span class="line">|-.gitignore</span><br><span class="line">|-.postcssrc.js</span><br><span class="line">|-index.html</span><br><span class="line">|-package.json</span><br><span class="line">|-package-lock.json</span><br><span class="line">|-README.md</span><br></pre></td></tr></table></figure>
+<ol>
+<li>build 文件夹，用来存放项目构建脚本</li>
+<li>config 中存放项目的一些基本配置信息，最常用的就是端口转发</li>
+<li>node_modules 这个目录存放的是项目的所有依赖，即 npm install 命令下载下来的文件</li>
+<li>src 这个目录下存放项目的源码，即开发者写的代码放在这里</li>
+<li>static 用来存放静态资源</li>
+<li>index.html 则是项目的首页，入口页，也是整个项目唯一的HTML页面</li>
+<li>package.json 中定义了项目的所有依赖，包括开发时依赖和发布时依赖</li>
+</ol>
+<p>对于开发者来说，以后 99.99% 的工作都是在 src 中完成的，src 中的文件目录如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">|-src</span><br><span class="line">||-assets</span><br><span class="line">||-components</span><br><span class="line">||-router</span><br><span class="line">||-App.vue</span><br><span class="line">||-main.js</span><br></pre></td></tr></table></figure>
+<ol>
+<li>assets 目录用来存放资产文件</li>
+<li>components 目录用来存放组件（一些可复用，非独立的页面），当然开发者也可以在 components 中直接创建完整页面。</li>
+<li>推荐在 components 中存放组件，另外单独新建一个 page 文件夹，专门用来放完整页面。</li>
+<li>router 目录中，存放了路由的js文件</li>
+<li>App.vue 是一个Vue组件，也是项目的第一个Vue组件</li>
+<li>main.js相当于Java中的main方法，是整个项目的入口js</li>
+</ol>
+<p>main.js 内容如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;./App&#x27;</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">&#x27;./router&#x27;</span></span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span></span><br><span class="line"><span class="comment">/* eslint-disable no-new */</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="attr">el</span>: <span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">  router,</span><br><span class="line">  <span class="attr">components</span>: &#123; App &#125;,</span><br><span class="line">  <span class="attr">template</span>: <span class="string">&#x27;&lt;App/&gt;&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>在main.js 中，首先导入 Vue 对象</li>
+<li>导入 App.vue ，并且命名为 App</li>
+<li>导入router，注意，由于router目录下路由默认文件名为 index.js ，因此可以省略</li>
+<li>所有东西都导入成功后，创建一个Vue对象，设置要被Vue处理的节点是 ‘#app’，’#app’ 指提前在index.html 文件中定义的一个div</li>
+<li>将 router 设置到 vue 对象中，这里是一个简化的写法，完整的写法是 router:router，如果 key/value 一模一样，则可以简写。</li>
+<li>声明一个组件 App，App 这个组件在一开始已经导入到项目中了，但是直接导入的组件无法直接使用，必须要声明。</li>
+<li>template 中定义了页面模板，即将 App 组件中的内容渲染到 ‘#app’ 这个div 中。</li>
+</ol>
+<p>项目启动成功后，看到的页面效果定义在 App.vue 中</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;img src=&quot;./assets/logo.png&quot;&gt;</span><br><span class="line">    &lt;router-view/&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#x27;App&#x27;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">#app &#123;</span><br><span class="line">  font-family: &#x27;Avenir&#x27;, Helvetica, Arial, sans-serif;</span><br><span class="line">  -webkit-font-smoothing: antialiased;</span><br><span class="line">  -moz-osx-font-smoothing: grayscale;</span><br><span class="line">  text-align: center;</span><br><span class="line">  color: #2c3e50;</span><br><span class="line">  margin-top: 60px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>App.vue 是一个vue组件，这个组件中包含三部分内容：1.页面模板（template）；2.页面脚本（script）；3.页面样式（style）</li>
+<li>页面模板中，定义了页面的 HTML 元素，这里定义了两个，一个是一张图片，另一个则是一个 router-view</li>
+<li>页面脚本主要用来实现当前页面数据初始化、事件处理等等操作</li>
+<li>页面样式就是针对 template 中 HTML 元素的页面美化操作</li>
+</ol>
+<p>需要额外解释的是，router-view，这个指展示路由页面的位置，可以简单理解为一个占位符，这个占位符展示的内容将根据当前具体的 URL 地址来定。具体展示的内容，要参考路由表，即 router/index.js 文件，该文件如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import Vue from &#x27;vue&#x27;</span><br><span class="line">import Router from &#x27;vue-router&#x27;</span><br><span class="line">import HelloWorld from &#x27;@/components/HelloWorld&#x27;</span><br><span class="line">Vue.use(Router)</span><br><span class="line">export default new Router(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: &#x27;/&#x27;,</span><br><span class="line">      name: &#x27;HelloWorld&#x27;,</span><br><span class="line">      component: HelloWorld</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>
+<p>这个文件中，首先导入了Vue对象、Router对象以及 HelloWorld 组件，</p>
+</li>
+<li>
+<p>创建一个Router对象，并定义路由表</p>
+</li>
+<li>
+<p>这里定义的路由表，path为 <code>/</code> ，对应的组件为 HelloWorld，即浏览器地址为 <code>/</code> 时，在router-view位置显示 HelloWorld 组件</p>
+<br/>
+</li>
+</ol>
+<h1 id="项目运行和编译"><a class="markdownIt-Anchor" href="#项目运行和编译"></a> 项目运行和编译</h1>
+<p>运行: <strong>npm run dev</strong>,这么大一个前端项目，肯定没法直接发布运行，当开发者完成项目开发后，将 cmd 命令行定位到当前项目目录，然后执行如下命令对项目进行打包：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">npm <span class="builtin-name">run</span> build</span><br></pre></td></tr></table></figure>
+<p>打包成功后，当前项目目录下会生成一个 dist 文件夹，这个文件夹中有两个文件，分别是 index.html 和 static ，index.html 页面就是我们 SPA 项目中唯一的 HTML 页面了，static 中则保存了编译后的 js、css等文件，项目发布时，可以使用 nginx 独立部署 dist 中的静态文件，也可以将静态文件拷贝到 Spring Boot 项目的 static 目录下，然后对 Spring Boot 项目进行编译打包发布。<br/><br/><br />
+<a href="http://www.javaboy.org/2019/0419/springboot-vue.html">copy from http://www.javaboy.org/</a></p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue CLI安装</title>
+    <url>/2021/05/05/Vue/vuecli-install/</url>
+    <content><![CDATA[<p><a href="https://cli.vuejs.org//zh/guide/">Vue CLI 文档</a><br />
+<br/></p>
+<blockquote>
+<p>关于旧版本</p>
+<p>Vue CLI 的包名称由 <code>vue-cli</code> 改成了 <code>@vue/cli</code>。 如果你已经全局安装了旧版本的 <code>vue-cli</code> (1.x 或 2.x)，你需要先通过 <code>npm uninstall vue-cli -g</code> 或 <code>yarn global remove vue-cli</code> 卸载它。</p>
+</blockquote>
+<blockquote>
+<p>Node 版本要求</p>
+<p>Vue CLI 4.x 需要 <a href="https://nodejs.org/">Node.js</a> v8.9 或更高版本 (推荐 v10 以上)。你可以使用 <a href="https://github.com/tj/n">n</a>，<a href="https://github.com/creationix/nvm">nvm</a> 或 <a href="https://github.com/coreybutler/nvm-windows">nvm-windows</a> 在同一台电脑中管理多个 Node 版本。</p>
+<p>可以使用下列任一命令安装这个新的包：</p>
+</blockquote>
+<p><escape><span id="more"></span></escape></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br><span class="line"><span class="comment"># OR</span></span><br><span class="line">yarn global add @vue/cli</span><br></pre></td></tr></table></figure>
+<p>安装之后，你就可以在命令行中访问 <code>vue</code> 命令。你可以通过简单运行 <code>vue</code>，看看是否展示出了一份所有可用命令的帮助信息，来验证它是否安装成功。</p>
+<p>你还可以用这个命令来检查其版本是否正确：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue --version</span><br></pre></td></tr></table></figure>
+<h3 id=""><a class="markdownIt-Anchor" href="#"></a> <a href="https://cli.vuejs.org/zh/guide/installation.html#%E5%8D%87%E7%BA%A7">#</a>升级</h3>
+<p>如需升级全局的 Vue CLI 包，请运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm update -g @vue/cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">yarn global upgrade --latest @vue/cli</span><br></pre></td></tr></table></figure>
+<h4 id="-2"><a class="markdownIt-Anchor" href="#-2"></a> <a href="https://cli.vuejs.org/zh/guide/installation.html#%E9%A1%B9%E7%9B%AE%E4%BE%9D%E8%B5%96">#</a>项目依赖</h4>
+<p>上面列出来的命令是用于升级全局的 Vue CLI。如需升级项目中的 Vue CLI 相关模块（以 <code>@vue/cli-plugin-</code> 或 <code>vue-cli-plugin-</code> 开头），请在项目目录下运行 <code>vue upgrade</code>：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">用法： upgrade [options] [plugin-name]</span><br><span class="line"></span><br><span class="line">（试用）升级 Vue CLI 服务及插件</span><br><span class="line"></span><br><span class="line">选项：</span><br><span class="line">  -t, --to &lt;version&gt;    升级 &lt;plugin-name&gt; 到指定的版本</span><br><span class="line">  -f, --from &lt;version&gt;  跳过本地版本检测，默认插件是从此处指定的版本升级上来</span><br><span class="line">  -r, --registry &lt;url&gt;  使用指定的 registry 地址安装依赖</span><br><span class="line">  --all                 升级所有的插件</span><br><span class="line">  --next                检查插件新版本时，包括 alpha/beta/rc 版本在内</span><br><span class="line">  -h, --help            输出帮助内容</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>
