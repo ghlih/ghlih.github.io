@@ -196,28 +196,6 @@
   </entry>
   
   <entry>
-    <title>使用spring security登录获取登录对象,密码也显示返回</title>
-    <link href="http://ghlih.github.io/2021/05/06/Spring/spring-security-password-return-display-not-null/"/>
-    <id>http://ghlih.github.io/2021/05/06/Spring/spring-security-password-return-display-not-null/</id>
-    <published>2021-05-05T16:00:00.000Z</published>
-    <updated>2021-08-22T00:35:07.513Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;一种的是在 实现了 UserDetails的类中加入@JsonIgnore&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/**实现类对象变成字符串的时候会忽略这个字段,另一个方面json字符串想要生成实现类对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt; *的话也会把这个字*段忽略掉,但有可能这个时候不想忽略它&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt; */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@JsonIgnore&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; String &lt;span class=&quot;title&quot;&gt;getPassword&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; password;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;另一种是在继承了WebSecurityConfigurerAdapter的类中&lt;/p&gt;
-&lt;p&gt;&lt;escape&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
-    
-    
-    <category term="spring security" scheme="http://ghlih.github.io/tags/spring-security/"/>
-    
-  </entry>
-  
-  <entry>
     <title>xxxMapper.xml放在java包下打包被忽略</title>
     <link href="http://ghlih.github.io/2021/05/06/Project/xxxMapper.xml-package-setup/"/>
     <id>http://ghlih.github.io/2021/05/06/Project/xxxMapper.xml-package-setup/</id>
@@ -239,6 +217,28 @@
     <category term="project" scheme="http://ghlih.github.io/tags/project/"/>
     
     <category term="xml" scheme="http://ghlih.github.io/tags/xml/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用spring security登录获取登录对象,密码也显示返回</title>
+    <link href="http://ghlih.github.io/2021/05/06/Spring/spring-security-password-return-display-not-null/"/>
+    <id>http://ghlih.github.io/2021/05/06/Spring/spring-security-password-return-display-not-null/</id>
+    <published>2021-05-05T16:00:00.000Z</published>
+    <updated>2021-08-22T00:35:07.513Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;一种的是在 实现了 UserDetails的类中加入@JsonIgnore&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/**实现类对象变成字符串的时候会忽略这个字段,另一个方面json字符串想要生成实现类对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt; *的话也会把这个字*段忽略掉,但有可能这个时候不想忽略它&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt; */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@JsonIgnore&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; String &lt;span class=&quot;title&quot;&gt;getPassword&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; password;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;另一种是在继承了WebSecurityConfigurerAdapter的类中&lt;/p&gt;
+&lt;p&gt;&lt;escape&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="spring security" scheme="http://ghlih.github.io/tags/spring-security/"/>
     
   </entry>
   
@@ -300,6 +300,33 @@
   </entry>
   
   <entry>
+    <title>windows快捷键</title>
+    <link href="http://ghlih.github.io/2021/05/05/Windows/windows-shortkey/"/>
+    <id>http://ghlih.github.io/2021/05/05/Windows/windows-shortkey/</id>
+    <published>2021-05-04T16:00:00.000Z</published>
+    <updated>2021-06-03T07:51:13.236Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;br/&gt;
+- sysdm.cpl: 系统设置
+&lt;br/&gt;
+</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="windows" scheme="http://ghlih.github.io/tags/windows/"/>
+    
+    <category term="shortkey" scheme="http://ghlih.github.io/tags/shortkey/"/>
+    
+  </entry>
+  
+  <entry>
     <title>PowerShell执行脚本</title>
     <link href="http://ghlih.github.io/2021/05/05/Windows/powershell-script/"/>
     <id>http://ghlih.github.io/2021/05/05/Windows/powershell-script/</id>
@@ -324,33 +351,6 @@
     <category term="windows" scheme="http://ghlih.github.io/tags/windows/"/>
     
     <category term="PowerShell" scheme="http://ghlih.github.io/tags/PowerShell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>windows快捷键</title>
-    <link href="http://ghlih.github.io/2021/05/05/Windows/windows-shortkey/"/>
-    <id>http://ghlih.github.io/2021/05/05/Windows/windows-shortkey/</id>
-    <published>2021-05-04T16:00:00.000Z</published>
-    <updated>2021-06-03T07:51:13.236Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;br/&gt;
-- sysdm.cpl: 系统设置
-&lt;br/&gt;
-</summary>
-      
-    
-    
-    
-    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
-    
-    
-    <category term="windows" scheme="http://ghlih.github.io/tags/windows/"/>
-    
-    <category term="shortkey" scheme="http://ghlih.github.io/tags/shortkey/"/>
     
   </entry>
   
