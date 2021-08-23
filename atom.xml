@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>HUAZI</title>
+  
+  
+  <link href="http://ghlih.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://ghlih.github.io/"/>
+  <updated>2021-08-22T00:32:16.744Z</updated>
+  <id>http://ghlih.github.io/</id>
+  
+  <author>
+    <name>lih</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mysql command</title>
+    <link href="http://ghlih.github.io/2021/05/31/Mysql/Mysql-command/"/>
+    <id>http://ghlih.github.io/2021/05/31/Mysql/Mysql-command/</id>
+    <published>2021-05-30T16:00:00.000Z</published>
+    <updated>2021-08-22T00:32:16.744Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;原文地址：&lt;a href=&quot;https://shockerli.net/post/1000-line-mysql-note/&quot;&gt;https://shockerli.net/post/1000-line-mysql-note/&lt;/a&gt; ，JavaGuide 对本文进行了简答排版，新增了目录。&lt;br /&gt;
+作者：格物&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;escape&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="Mysql" scheme="http://ghlih.github.io/tags/Mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Aliyun OSS</title>
+    <link href="http://ghlih.github.io/2021/05/19/Java/Aliyun-OSS/"/>
+    <id>http://ghlih.github.io/2021/05/19/Java/Aliyun-OSS/</id>
+    <published>2021-05-18T16:00:00.000Z</published>
+    <updated>2021-08-22T00:34:28.041Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;AliyunOSS 使用方法&lt;/p&gt;
+&lt;p&gt;pom.xml&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- https://mvnrepository.com/artifact/com.aliyun.oss/aliyun-sdk-oss --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;com.aliyun.oss&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;aliyun-sdk-oss&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;           &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;3.9.1&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;escape&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="OSS" scheme="http://ghlih.github.io/tags/OSS/"/>
+    
+    <category term="Java" scheme="http://ghlih.github.io/tags/Java/"/>
+    
+    <category term="Upload" scheme="http://ghlih.github.io/tags/Upload/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>163 mailbox port</title>
+    <link href="http://ghlih.github.io/2021/05/17/Mail/mailbox-port/"/>
+    <id>http://ghlih.github.io/2021/05/17/Mail/mailbox-port/</id>
+    <published>2021-05-16T16:00:00.000Z</published>
+    <updated>2021-06-03T07:50:34.875Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;类型&lt;/th&gt;
+&lt;th&gt;服务器名称&lt;/th&gt;
+&lt;th&gt;服务器地址&lt;/th&gt;
+&lt;th&gt;SSL协议端口号&lt;/th&gt;
+&lt;th&gt;非SSL协议端口号&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="mail" scheme="http://ghlih.github.io/tags/mail/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vimium Keyboard shortcuts</title>
+    <link href="http://ghlih.github.io/2021/05/14/Brower/vimium-keyboard-shortkeys/"/>
+    <id>http://ghlih.github.io/2021/05/14/Brower/vimium-keyboard-shortkeys/</id>
+    <published>2021-05-13T16:00:00.000Z</published>
+    <updated>2021-08-22T00:34:12.486Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;vimum快捷键：&lt;/p&gt;
+&lt;p&gt;&lt;escape&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="brower" scheme="http://ghlih.github.io/tags/brower/"/>
+    
+    <category term="vimium" scheme="http://ghlih.github.io/tags/vimium/"/>
+    
+    <category term="shortkeys" scheme="http://ghlih.github.io/tags/shortkeys/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTTP STATUS CODE</title>
+    <link href="http://ghlih.github.io/2021/05/07/Web/http-status-code/"/>
+    <id>http://ghlih.github.io/2021/05/07/Web/http-status-code/</id>
+    <published>2021-05-06T16:00:00.000Z</published>
+    <updated>2021-08-22T00:35:45.465Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;http状态码&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#http状态码&quot;&gt;&lt;/a&gt; HTTP状态码&lt;/h1&gt;
+&lt;p&gt;当浏览者访问一个网页时，浏览者的浏览器会向网页所在服务器发出请求。当浏览器接收并显示网页前，此网页所在的服务器会返回一个包含HTTP状态码的信息头（server header）用以响应浏览器的请求。&lt;/p&gt;
+&lt;p&gt;HTTP状态码的英文为HTTP Status Code。&lt;/p&gt;
+&lt;p&gt;&lt;escape&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="web" scheme="http://ghlih.github.io/tags/web/"/>
+    
+    <category term="http" scheme="http://ghlih.github.io/tags/http/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mybatis generator代码生成器</title>
+    <link href="http://ghlih.github.io/2021/05/06/Plugin/mybatis-generator/"/>
+    <id>http://ghlih.github.io/2021/05/06/Plugin/mybatis-generator/</id>
+    <published>2021-05-05T16:00:00.000Z</published>
+    <updated>2021-08-22T00:34:47.228Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;pom.xml文件添加依赖和插件&lt;/p&gt;
+&lt;p&gt;&lt;escape&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="mybatisgenerator" scheme="http://ghlih.github.io/tags/mybatisgenerator/"/>
+    
+    <category term="plugin" scheme="http://ghlih.github.io/tags/plugin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue跨域访问后端报404</title>
+    <link href="http://ghlih.github.io/2021/05/06/Project/vue%20-cross-origin-access/"/>
+    <id>http://ghlih.github.io/2021/05/06/Project/vue%20-cross-origin-access/</id>
+    <published>2021-05-05T16:00:00.000Z</published>
+    <updated>2021-08-21T23:42:42.963Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;vueconfigjs文件不能放在src目录下要放在项目的根目录下&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#vueconfigjs文件不能放在src目录下要放在项目的根目录下&quot;&gt;&lt;/a&gt; vue.config.js文件不能放在sr</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="project" scheme="http://ghlih.github.io/tags/project/"/>
+    
+    <category term="vue" scheme="http://ghlih.github.io/tags/vue/"/>
+    
+    <category term="backend" scheme="http://ghlih.github.io/tags/backend/"/>
+    
+    <category term="crossorigin" scheme="http://ghlih.github.io/tags/crossorigin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>xxxMapper.xml放在java包下打包被忽略</title>
+    <link href="http://ghlih.github.io/2021/05/06/Project/xxxMapper.xml-package-setup/"/>
+    <id>http://ghlih.github.io/2021/05/06/Project/xxxMapper.xml-package-setup/</id>
+    <published>2021-05-05T16:00:00.000Z</published>
+    <updated>2021-06-03T07:56:30.170Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;xxxMapper.xml放在src/main/java 下不会被打包,pom.xml中添加配置&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="project" scheme="http://ghlih.github.io/tags/project/"/>
+    
+    <category term="xml" scheme="http://ghlih.github.io/tags/xml/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用spring security登录获取登录对象,密码也显示返回</title>
+    <link href="http://ghlih.github.io/2021/05/06/Spring/spring-security-password-return-display-not-null/"/>
+    <id>http://ghlih.github.io/2021/05/06/Spring/spring-security-password-return-display-not-null/</id>
+    <published>2021-05-05T16:00:00.000Z</published>
+    <updated>2021-08-22T00:35:07.513Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;一种的是在 实现了 UserDetails的类中加入@JsonIgnore&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/**实现类对象变成字符串的时候会忽略这个字段,另一个方面json字符串想要生成实现类对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt; *的话也会把这个字*段忽略掉,但有可能这个时候不想忽略它&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt; */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@JsonIgnore&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; String &lt;span class=&quot;title&quot;&gt;getPassword&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; password;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;另一种是在继承了WebSecurityConfigurerAdapter的类中&lt;/p&gt;
+&lt;p&gt;&lt;escape&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="spring security" scheme="http://ghlih.github.io/tags/spring-security/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PowerShell执行脚本</title>
+    <link href="http://ghlih.github.io/2021/05/05/Windows/powershell-script/"/>
+    <id>http://ghlih.github.io/2021/05/05/Windows/powershell-script/</id>
+    <published>2021-05-04T16:00:00.000Z</published>
+    <updated>2021-08-22T00:35:54.310Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;PowerShell脚本执行策略:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Restricted： 禁止运行任何脚本和配置文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AllSigned ：可以运行脚本，但要求所有脚本和配置文件由可信发布者签名，包括在本地计算机上编写的脚本。&lt;/p&gt;
+&lt;p&gt;&lt;escape&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="windows" scheme="http://ghlih.github.io/tags/windows/"/>
+    
+    <category term="PowerShell" scheme="http://ghlih.github.io/tags/PowerShell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows快捷键</title>
+    <link href="http://ghlih.github.io/2021/05/05/Windows/windows-shortkey/"/>
+    <id>http://ghlih.github.io/2021/05/05/Windows/windows-shortkey/</id>
+    <published>2021-05-04T16:00:00.000Z</published>
+    <updated>2021-06-03T07:51:13.236Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;br/&gt;
+- sysdm.cpl: 系统设置
+&lt;br/&gt;
+</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="windows" scheme="http://ghlih.github.io/tags/windows/"/>
+    
+    <category term="shortkey" scheme="http://ghlih.github.io/tags/shortkey/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue环境安装和项目结构介绍</title>
+    <link href="http://ghlih.github.io/2021/05/05/Vue/vue-environment-intall-and-project-structure-instruction/"/>
+    <id>http://ghlih.github.io/2021/05/05/Vue/vue-environment-intall-and-project-structure-instruction/</id>
+    <published>2021-05-04T16:00:00.000Z</published>
+    <updated>2021-08-22T00:35:36.649Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;基本环境搭建&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#基本环境搭建&quot;&gt;&lt;/a&gt; 基本环境搭建&lt;/h1&gt;
+&lt;p&gt;首先需要安装两个东西：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;NodeJS&lt;/li&gt;
+&lt;li&gt;npm&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;直接搜索下载 NodeJS 即可，安装成功之后，npm 也就有了。安装成功之后，可以 在 cmd 命令中验证是否安装成功：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;D:\&amp;gt;node -v&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;v14.16.1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;D:\&amp;gt;npm -v&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6.14.12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;escape&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="Vue" scheme="http://ghlih.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue CLI安装</title>
+    <link href="http://ghlih.github.io/2021/05/05/Vue/vuecli-install/"/>
+    <id>http://ghlih.github.io/2021/05/05/Vue/vuecli-install/</id>
+    <published>2021-05-04T16:00:00.000Z</published>
+    <updated>2021-08-22T00:35:17.007Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://cli.vuejs.org//zh/guide/&quot;&gt;Vue CLI 文档&lt;/a&gt;&lt;br /&gt;
+&lt;br/&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;关于旧版本&lt;/p&gt;
+&lt;p&gt;Vue CLI 的包名称由 &lt;code&gt;vue-cli&lt;/code&gt; 改成了 &lt;code&gt;@vue/cli&lt;/code&gt;。 如果你已经全局安装了旧版本的 &lt;code&gt;vue-cli&lt;/code&gt; (1.x 或 2.x)，你需要先通过 &lt;code&gt;npm uninstall vue-cli -g&lt;/code&gt; 或 &lt;code&gt;yarn global remove vue-cli&lt;/code&gt; 卸载它。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Node 版本要求&lt;/p&gt;
+&lt;p&gt;Vue CLI 4.x 需要 &lt;a href=&quot;https://nodejs.org/&quot;&gt;Node.js&lt;/a&gt; v8.9 或更高版本 (推荐 v10 以上)。你可以使用 &lt;a href=&quot;https://github.com/tj/n&quot;&gt;n&lt;/a&gt;，&lt;a href=&quot;https://github.com/creationix/nvm&quot;&gt;nvm&lt;/a&gt; 或 &lt;a href=&quot;https://github.com/coreybutler/nvm-windows&quot;&gt;nvm-windows&lt;/a&gt; 在同一台电脑中管理多个 Node 版本。&lt;/p&gt;
+&lt;p&gt;可以使用下列任一命令安装这个新的包：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;escape&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="Vue" scheme="http://ghlih.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ArrayList的扩容机制</title>
+    <link href="http://ghlih.github.io/2021/04/20/Java/arraylist-resize/"/>
+    <id>http://ghlih.github.io/2021/04/20/Java/arraylist-resize/</id>
+    <published>2021-04-19T16:00:00.000Z</published>
+    <updated>2021-08-22T00:34:34.235Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;ArrayList 扩容机制&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;escape&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="Java" scheme="http://ghlih.github.io/tags/Java/"/>
+    
+    <category term="ArrayList" scheme="http://ghlih.github.io/tags/ArrayList/"/>
+    
+  </entry>
+  
+</feed>
