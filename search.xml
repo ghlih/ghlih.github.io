@@ -146,51 +146,6 @@
       </tags>
   </entry>
   <entry>
-    <title>163 mailbox port</title>
-    <url>/2021/05/17/Mail/mailbox-port/</url>
-    <content><![CDATA[<table>
-<thead>
-<tr>
-<th style="text-align:left">类型</th>
-<th>服务器名称</th>
-<th>服务器地址</th>
-<th>SSL协议端口号</th>
-<th>非SSL协议端口号</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">收件服务器</td>
-<td>POP</td>
-<td><a href="http://pop.163.com">pop.163.com</a></td>
-<td>995</td>
-<td>110</td>
-</tr>
-<tr>
-<td style="text-align:left">收件服务器</td>
-<td>IMAP</td>
-<td><a href="http://imap.163.com">imap.163.com</a></td>
-<td>993</td>
-<td>143</td>
-</tr>
-<tr>
-<td style="text-align:left">发件服务器</td>
-<td>SMTP</td>
-<td><a href="http://smtp.163.com">smtp.163.com</a></td>
-<td>465/994</td>
-<td>25</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>mail</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ArrayList的扩容机制</title>
     <url>/2021/04/20/Java/arraylist-resize/</url>
     <content><![CDATA[<blockquote>
@@ -236,6 +191,51 @@
       <tags>
         <tag>ArrayList</tag>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>163 mailbox port</title>
+    <url>/2021/05/17/Mail/mailbox-port/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th>服务器名称</th>
+<th>服务器地址</th>
+<th>SSL协议端口号</th>
+<th>非SSL协议端口号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">收件服务器</td>
+<td>POP</td>
+<td><a href="http://pop.163.com">pop.163.com</a></td>
+<td>995</td>
+<td>110</td>
+</tr>
+<tr>
+<td style="text-align:left">收件服务器</td>
+<td>IMAP</td>
+<td><a href="http://imap.163.com">imap.163.com</a></td>
+<td>993</td>
+<td>143</td>
+</tr>
+<tr>
+<td style="text-align:left">发件服务器</td>
+<td>SMTP</td>
+<td><a href="http://smtp.163.com">smtp.163.com</a></td>
+<td>465/994</td>
+<td>25</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>mail</tag>
       </tags>
   </entry>
   <entry>
@@ -305,6 +305,22 @@
       <tags>
         <tag>project</tag>
         <tag>xml</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用spring security登录获取登录对象,密码也显示返回</title>
+    <url>/2021/05/06/Spring/spring-security-password-return-display-not-null/</url>
+    <content><![CDATA[<p>一种的是在 实现了 UserDetails的类中加入@JsonIgnore</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**实现类对象变成字符串的时候会忽略这个字段,另一个方面json字符串想要生成实现类对象</span></span><br><span class="line"><span class="comment"> *的话也会把这个字*段忽略掉,但有可能这个时候不想忽略它</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@JsonIgnore</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getPassword</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> password;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另一种是在继承了WebSecurityConfigurerAdapter的类中</p>
+<p><escape><span id="more"></span></escape></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">configure</span><span class="params">(HttpSecurity http)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    http.  </span><br><span class="line">    ......</span><br><span class="line">         .successHandler(<span class="keyword">new</span> AuthenticationSuccessHandler() &#123;</span><br><span class="line">              <span class="meta">@Override</span></span><br><span class="line">              <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAuthenticationSuccess</span><span class="params">(HttpServletRequest req, </span></span></span><br><span class="line"><span class="params"><span class="function">                  HttpServletResponse resp,Authentication auth)</span> </span></span><br><span class="line"><span class="function">                  <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">                  ......</span><br><span class="line">                  Xx xx = (Xx) auth.getPrincipal().setPassword(<span class="keyword">null</span>);</span><br><span class="line">                  ......</span><br><span class="line">               &#125;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>spring security</tag>
       </tags>
   </entry>
   <entry>
@@ -424,22 +440,6 @@
       </categories>
       <tags>
         <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用spring security登录获取登录对象,密码也显示返回</title>
-    <url>/2021/05/06/Spring/spring-security-password-return-display-not-null/</url>
-    <content><![CDATA[<p>一种的是在 实现了 UserDetails的类中加入@JsonIgnore</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**实现类对象变成字符串的时候会忽略这个字段,另一个方面json字符串想要生成实现类对象</span></span><br><span class="line"><span class="comment"> *的话也会把这个字*段忽略掉,但有可能这个时候不想忽略它</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@JsonIgnore</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getPassword</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> password;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>另一种是在继承了WebSecurityConfigurerAdapter的类中</p>
-<p><escape><span id="more"></span></escape></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">configure</span><span class="params">(HttpSecurity http)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    http.  </span><br><span class="line">    ......</span><br><span class="line">         .successHandler(<span class="keyword">new</span> AuthenticationSuccessHandler() &#123;</span><br><span class="line">              <span class="meta">@Override</span></span><br><span class="line">              <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onAuthenticationSuccess</span><span class="params">(HttpServletRequest req, </span></span></span><br><span class="line"><span class="params"><span class="function">                  HttpServletResponse resp,Authentication auth)</span> </span></span><br><span class="line"><span class="function">                  <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">                  ......</span><br><span class="line">                  Xx xx = (Xx) auth.getPrincipal().setPassword(<span class="keyword">null</span>);</span><br><span class="line">                  ......</span><br><span class="line">               &#125;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>spring security</tag>
       </tags>
   </entry>
   <entry>
