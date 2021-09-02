@@ -168,48 +168,18 @@
       </tags>
   </entry>
   <entry>
-    <title>163 mailbox port</title>
-    <url>/2021/05/17/Mail/mailbox-port/</url>
-    <content><![CDATA[<table>
-<thead>
-<tr>
-<th style="text-align:left">类型</th>
-<th>服务器名称</th>
-<th>服务器地址</th>
-<th>SSL协议端口号</th>
-<th>非SSL协议端口号</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">收件服务器</td>
-<td>POP</td>
-<td><a href="http://pop.163.com">pop.163.com</a></td>
-<td>995</td>
-<td>110</td>
-</tr>
-<tr>
-<td style="text-align:left">收件服务器</td>
-<td>IMAP</td>
-<td><a href="http://imap.163.com">imap.163.com</a></td>
-<td>993</td>
-<td>143</td>
-</tr>
-<tr>
-<td style="text-align:left">发件服务器</td>
-<td>SMTP</td>
-<td><a href="http://smtp.163.com">smtp.163.com</a></td>
-<td>465/994</td>
-<td>25</td>
-</tr>
-</tbody>
-</table>
+    <title>vue跨域访问后端报404</title>
+    <url>/2021/05/06/Project/vue%20-cross-origin-access/</url>
+    <content><![CDATA[<h2 id="vueconfigjs文件不能放在src目录下要放在项目的根目录下"><a class="markdownIt-Anchor" href="#vueconfigjs文件不能放在src目录下要放在项目的根目录下"></a> vue.config.js文件不能放在src目录下,要放在项目的根目录下</h2>
 ]]></content>
       <categories>
         <category>Tech</category>
       </categories>
       <tags>
-        <tag>mail</tag>
+        <tag>project</tag>
+        <tag>vue</tag>
+        <tag>backend</tag>
+        <tag>crossorigin</tag>
       </tags>
   </entry>
   <entry>
@@ -261,6 +231,20 @@
       </tags>
   </entry>
   <entry>
+    <title>xxxMapper.xml放在java包下打包被忽略</title>
+    <url>/2021/05/06/Project/xxxMapper.xml-package-setup/</url>
+    <content><![CDATA[<p>xxxMapper.xml放在src/main/java 下不会被打包,pom.xml中添加配置</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/java<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>project</tag>
+        <tag>xml</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>mybatis generator代码生成器</title>
     <url>/2021/05/06/Plugin/mybatis-generator/</url>
     <content><![CDATA[<p>pom.xml文件添加依赖和插件</p>
@@ -276,6 +260,51 @@
       <tags>
         <tag>mybatisgenerator</tag>
         <tag>plugin</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>163 mailbox port</title>
+    <url>/2021/05/17/Mail/mailbox-port/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th>服务器名称</th>
+<th>服务器地址</th>
+<th>SSL协议端口号</th>
+<th>非SSL协议端口号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">收件服务器</td>
+<td>POP</td>
+<td><a href="http://pop.163.com">pop.163.com</a></td>
+<td>995</td>
+<td>110</td>
+</tr>
+<tr>
+<td style="text-align:left">收件服务器</td>
+<td>IMAP</td>
+<td><a href="http://imap.163.com">imap.163.com</a></td>
+<td>993</td>
+<td>143</td>
+</tr>
+<tr>
+<td style="text-align:left">发件服务器</td>
+<td>SMTP</td>
+<td><a href="http://smtp.163.com">smtp.163.com</a></td>
+<td>465/994</td>
+<td>25</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>mail</tag>
       </tags>
   </entry>
   <entry>
@@ -295,32 +324,37 @@
       </tags>
   </entry>
   <entry>
-    <title>vue跨域访问后端报404</title>
-    <url>/2021/05/06/Project/vue%20-cross-origin-access/</url>
-    <content><![CDATA[<h2 id="vueconfigjs文件不能放在src目录下要放在项目的根目录下"><a class="markdownIt-Anchor" href="#vueconfigjs文件不能放在src目录下要放在项目的根目录下"></a> vue.config.js文件不能放在src目录下,要放在项目的根目录下</h2>
+    <title>PowerShell执行脚本</title>
+    <url>/2021/05/05/Windows/powershell-script/</url>
+    <content><![CDATA[<p>PowerShell脚本执行策略:</p>
+<ul>
+<li>
+<p>Restricted： 禁止运行任何脚本和配置文件。</p>
+</li>
+<li>
+<p>AllSigned ：可以运行脚本，但要求所有脚本和配置文件由可信发布者签名，包括在本地计算机上编写的脚本。</p>
+<p><escape><span id="more"></span></escape></p>
+</li>
+<li>
+<p>RemoteSigned ：可以运行脚本，但要求从网络上下载的脚本和配置文件由可信发布者签名；       不要求对已经运行和已在本地计算机编写的脚本进行数字签名。</p>
+</li>
+<li>
+<p>Unrestricted ：可以运行未签名脚本。</p>
+</li>
+</ul>
+<br/>
+PowerShell默认的执行策略就是“Restricted”，禁止任何脚本的执行。【Get-ExecutionPolicy】命令不区分大小写，用于获得当前的执行策略。
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">PS D:\Projects&gt; Get-ExecutionPolicy</span><br><span class="line">Restricted</span><br></pre></td></tr></table></figure>
+<br/>
+<p>使用【Set-ExecutionPolicy】命令设置/更改执行策略，选择“RemoteSigned”这个执行策略，这个策略既安全又可以执行本地编写的脚本.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">PS C:\Windows\system32&gt; Set-ExecutionPolicy RemoteSigned</span><br><span class="line"></span><br><span class="line">执行策略更改</span><br><span class="line">执行策略可帮助你防止执行不信任的脚本。更改执行策略可能会产生安全风险，如 https:/go.microsoft.com/</span><br><span class="line">fwlink/?LinkID=135170</span><br><span class="line">中的 about_Execution_Policies 帮助主题所述。是否要更改执行策略?</span><br><span class="line">[Y] 是(Y)  [A] 全是(A)  [N] 否(N)  [L] 全否(L)  [S] 暂停(S)  [?] 帮助 (默认值为“N”): y</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Tech</category>
       </categories>
       <tags>
-        <tag>project</tag>
-        <tag>vue</tag>
-        <tag>backend</tag>
-        <tag>crossorigin</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>xxxMapper.xml放在java包下打包被忽略</title>
-    <url>/2021/05/06/Project/xxxMapper.xml-package-setup/</url>
-    <content><![CDATA[<p>xxxMapper.xml放在src/main/java 下不会被打包,pom.xml中添加配置</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/java<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>project</tag>
-        <tag>xml</tag>
+        <tag>windows</tag>
+        <tag>PowerShell</tag>
       </tags>
   </entry>
   <entry>
@@ -615,40 +649,6 @@
       <tags>
         <tag>web</tag>
         <tag>http</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PowerShell执行脚本</title>
-    <url>/2021/05/05/Windows/powershell-script/</url>
-    <content><![CDATA[<p>PowerShell脚本执行策略:</p>
-<ul>
-<li>
-<p>Restricted： 禁止运行任何脚本和配置文件。</p>
-</li>
-<li>
-<p>AllSigned ：可以运行脚本，但要求所有脚本和配置文件由可信发布者签名，包括在本地计算机上编写的脚本。</p>
-<p><escape><span id="more"></span></escape></p>
-</li>
-<li>
-<p>RemoteSigned ：可以运行脚本，但要求从网络上下载的脚本和配置文件由可信发布者签名；       不要求对已经运行和已在本地计算机编写的脚本进行数字签名。</p>
-</li>
-<li>
-<p>Unrestricted ：可以运行未签名脚本。</p>
-</li>
-</ul>
-<br/>
-PowerShell默认的执行策略就是“Restricted”，禁止任何脚本的执行。【Get-ExecutionPolicy】命令不区分大小写，用于获得当前的执行策略。
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">PS D:\Projects&gt; Get-ExecutionPolicy</span><br><span class="line">Restricted</span><br></pre></td></tr></table></figure>
-<br/>
-<p>使用【Set-ExecutionPolicy】命令设置/更改执行策略，选择“RemoteSigned”这个执行策略，这个策略既安全又可以执行本地编写的脚本.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">PS C:\Windows\system32&gt; Set-ExecutionPolicy RemoteSigned</span><br><span class="line"></span><br><span class="line">执行策略更改</span><br><span class="line">执行策略可帮助你防止执行不信任的脚本。更改执行策略可能会产生安全风险，如 https:/go.microsoft.com/</span><br><span class="line">fwlink/?LinkID=135170</span><br><span class="line">中的 about_Execution_Policies 帮助主题所述。是否要更改执行策略?</span><br><span class="line">[Y] 是(Y)  [A] 全是(A)  [N] 否(N)  [L] 全否(L)  [S] 暂停(S)  [?] 帮助 (默认值为“N”): y</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>windows</tag>
-        <tag>PowerShell</tag>
       </tags>
   </entry>
   <entry>
