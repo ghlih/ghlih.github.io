@@ -57,9 +57,9 @@
     <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
     
     
-    <category term="OSS" scheme="http://ghlih.github.io/tags/OSS/"/>
-    
     <category term="Java" scheme="http://ghlih.github.io/tags/Java/"/>
+    
+    <category term="OSS" scheme="http://ghlih.github.io/tags/OSS/"/>
     
     <category term="Upload" scheme="http://ghlih.github.io/tags/Upload/"/>
     
@@ -146,6 +146,59 @@
   </entry>
   
   <entry>
+    <title>vue跨域访问后端报404</title>
+    <link href="http://ghlih.github.io/2021/05/06/Project/vue%20-cross-origin-access/"/>
+    <id>http://ghlih.github.io/2021/05/06/Project/vue%20-cross-origin-access/</id>
+    <published>2021-05-05T16:00:00.000Z</published>
+    <updated>2021-08-21T23:42:42.963Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;vueconfigjs文件不能放在src目录下要放在项目的根目录下&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#vueconfigjs文件不能放在src目录下要放在项目的根目录下&quot;&gt;&lt;/a&gt; vue.config.js文件不能放在sr</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="project" scheme="http://ghlih.github.io/tags/project/"/>
+    
+    <category term="vue" scheme="http://ghlih.github.io/tags/vue/"/>
+    
+    <category term="backend" scheme="http://ghlih.github.io/tags/backend/"/>
+    
+    <category term="crossorigin" scheme="http://ghlih.github.io/tags/crossorigin/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>xxxMapper.xml放在java包下打包被忽略</title>
+    <link href="http://ghlih.github.io/2021/05/06/Project/xxxMapper.xml-package-setup/"/>
+    <id>http://ghlih.github.io/2021/05/06/Project/xxxMapper.xml-package-setup/</id>
+    <published>2021-05-05T16:00:00.000Z</published>
+    <updated>2021-06-03T07:56:30.170Z</updated>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;xxxMapper.xml放在src/main/java 下不会被打包,pom.xml中添加配置&lt;/p&gt;
+&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;s</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="project" scheme="http://ghlih.github.io/tags/project/"/>
+    
+    <category term="xml" scheme="http://ghlih.github.io/tags/xml/"/>
+    
+  </entry>
+  
+  <entry>
     <title>mybatis generator代码生成器</title>
     <link href="http://ghlih.github.io/2021/05/06/Plugin/mybatis-generator/"/>
     <id>http://ghlih.github.io/2021/05/06/Plugin/mybatis-generator/</id>
@@ -186,59 +239,6 @@
     
     
     <category term="spring security" scheme="http://ghlih.github.io/tags/spring-security/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>xxxMapper.xml放在java包下打包被忽略</title>
-    <link href="http://ghlih.github.io/2021/05/06/Project/xxxMapper.xml-package-setup/"/>
-    <id>http://ghlih.github.io/2021/05/06/Project/xxxMapper.xml-package-setup/</id>
-    <published>2021-05-05T16:00:00.000Z</published>
-    <updated>2021-06-03T07:56:30.170Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;xxxMapper.xml放在src/main/java 下不会被打包,pom.xml中添加配置&lt;/p&gt;
-&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;s</summary>
-      
-    
-    
-    
-    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
-    
-    
-    <category term="project" scheme="http://ghlih.github.io/tags/project/"/>
-    
-    <category term="xml" scheme="http://ghlih.github.io/tags/xml/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue跨域访问后端报404</title>
-    <link href="http://ghlih.github.io/2021/05/06/Project/vue%20-cross-origin-access/"/>
-    <id>http://ghlih.github.io/2021/05/06/Project/vue%20-cross-origin-access/</id>
-    <published>2021-05-05T16:00:00.000Z</published>
-    <updated>2021-08-21T23:42:42.963Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;vueconfigjs文件不能放在src目录下要放在项目的根目录下&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#vueconfigjs文件不能放在src目录下要放在项目的根目录下&quot;&gt;&lt;/a&gt; vue.config.js文件不能放在sr</summary>
-      
-    
-    
-    
-    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
-    
-    
-    <category term="project" scheme="http://ghlih.github.io/tags/project/"/>
-    
-    <category term="vue" scheme="http://ghlih.github.io/tags/vue/"/>
-    
-    <category term="backend" scheme="http://ghlih.github.io/tags/backend/"/>
-    
-    <category term="crossorigin" scheme="http://ghlih.github.io/tags/crossorigin/"/>
     
   </entry>
   
@@ -372,9 +372,9 @@
     <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
     
     
-    <category term="Java" scheme="http://ghlih.github.io/tags/Java/"/>
-    
     <category term="ArrayList" scheme="http://ghlih.github.io/tags/ArrayList/"/>
+    
+    <category term="Java" scheme="http://ghlih.github.io/tags/Java/"/>
     
   </entry>
   
