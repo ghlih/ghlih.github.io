@@ -57,9 +57,9 @@
     <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
     
     
-    <category term="Java" scheme="http://ghlih.github.io/tags/Java/"/>
-    
     <category term="OSS" scheme="http://ghlih.github.io/tags/OSS/"/>
+    
+    <category term="Java" scheme="http://ghlih.github.io/tags/Java/"/>
     
     <category term="Upload" scheme="http://ghlih.github.io/tags/Upload/"/>
     
@@ -146,6 +146,28 @@
   </entry>
   
   <entry>
+    <title>mybatis generator代码生成器</title>
+    <link href="http://ghlih.github.io/2021/05/06/Plugin/mybatis-generator/"/>
+    <id>http://ghlih.github.io/2021/05/06/Plugin/mybatis-generator/</id>
+    <published>2021-05-05T16:00:00.000Z</published>
+    <updated>2021-08-22T00:34:47.228Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;pom.xml文件添加依赖和插件&lt;/p&gt;
+&lt;p&gt;&lt;escape&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="mybatisgenerator" scheme="http://ghlih.github.io/tags/mybatisgenerator/"/>
+    
+    <category term="plugin" scheme="http://ghlih.github.io/tags/plugin/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vue跨域访问后端报404</title>
     <link href="http://ghlih.github.io/2021/05/06/Project/vue%20-cross-origin-access/"/>
     <id>http://ghlih.github.io/2021/05/06/Project/vue%20-cross-origin-access/</id>
@@ -195,28 +217,6 @@
     <category term="project" scheme="http://ghlih.github.io/tags/project/"/>
     
     <category term="xml" scheme="http://ghlih.github.io/tags/xml/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mybatis generator代码生成器</title>
-    <link href="http://ghlih.github.io/2021/05/06/Plugin/mybatis-generator/"/>
-    <id>http://ghlih.github.io/2021/05/06/Plugin/mybatis-generator/</id>
-    <published>2021-05-05T16:00:00.000Z</published>
-    <updated>2021-08-22T00:34:47.228Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;pom.xml文件添加依赖和插件&lt;/p&gt;
-&lt;p&gt;&lt;escape&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
-    
-    
-    <category term="mybatisgenerator" scheme="http://ghlih.github.io/tags/mybatisgenerator/"/>
-    
-    <category term="plugin" scheme="http://ghlih.github.io/tags/plugin/"/>
     
   </entry>
   
@@ -372,9 +372,9 @@
     <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
     
     
-    <category term="ArrayList" scheme="http://ghlih.github.io/tags/ArrayList/"/>
-    
     <category term="Java" scheme="http://ghlih.github.io/tags/Java/"/>
+    
+    <category term="ArrayList" scheme="http://ghlih.github.io/tags/ArrayList/"/>
     
   </entry>
   
