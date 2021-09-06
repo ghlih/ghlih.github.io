@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>小记</title>
+  <title>Lih&#39;s Blog</title>
   
   
   <link href="http://ghlih.github.io/atom.xml" rel="self"/>
@@ -57,9 +57,9 @@
     <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
     
     
-    <category term="Java" scheme="http://ghlih.github.io/tags/Java/"/>
-    
     <category term="OSS" scheme="http://ghlih.github.io/tags/OSS/"/>
+    
+    <category term="Java" scheme="http://ghlih.github.io/tags/Java/"/>
     
     <category term="Upload" scheme="http://ghlih.github.io/tags/Upload/"/>
     
@@ -270,6 +270,36 @@
   </entry>
   
   <entry>
+    <title>Vue CLI安装</title>
+    <link href="http://ghlih.github.io/2021/05/05/Vue/vuecli-install/"/>
+    <id>http://ghlih.github.io/2021/05/05/Vue/vuecli-install/</id>
+    <published>2021-05-04T16:00:00.000Z</published>
+    <updated>2021-08-22T00:35:17.007Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://cli.vuejs.org//zh/guide/&quot;&gt;Vue CLI 文档&lt;/a&gt;&lt;br /&gt;
+&lt;br/&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;关于旧版本&lt;/p&gt;
+&lt;p&gt;Vue CLI 的包名称由 &lt;code&gt;vue-cli&lt;/code&gt; 改成了 &lt;code&gt;@vue/cli&lt;/code&gt;。 如果你已经全局安装了旧版本的 &lt;code&gt;vue-cli&lt;/code&gt; (1.x 或 2.x)，你需要先通过 &lt;code&gt;npm uninstall vue-cli -g&lt;/code&gt; 或 &lt;code&gt;yarn global remove vue-cli&lt;/code&gt; 卸载它。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Node 版本要求&lt;/p&gt;
+&lt;p&gt;Vue CLI 4.x 需要 &lt;a href=&quot;https://nodejs.org/&quot;&gt;Node.js&lt;/a&gt; v8.9 或更高版本 (推荐 v10 以上)。你可以使用 &lt;a href=&quot;https://github.com/tj/n&quot;&gt;n&lt;/a&gt;，&lt;a href=&quot;https://github.com/creationix/nvm&quot;&gt;nvm&lt;/a&gt; 或 &lt;a href=&quot;https://github.com/coreybutler/nvm-windows&quot;&gt;nvm-windows&lt;/a&gt; 在同一台电脑中管理多个 Node 版本。&lt;/p&gt;
+&lt;p&gt;可以使用下列任一命令安装这个新的包：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;escape&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="Vue" scheme="http://ghlih.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
     <title>PowerShell执行脚本</title>
     <link href="http://ghlih.github.io/2021/05/05/Windows/powershell-script/"/>
     <id>http://ghlih.github.io/2021/05/05/Windows/powershell-script/</id>
@@ -325,36 +355,6 @@
   </entry>
   
   <entry>
-    <title>Vue CLI安装</title>
-    <link href="http://ghlih.github.io/2021/05/05/Vue/vuecli-install/"/>
-    <id>http://ghlih.github.io/2021/05/05/Vue/vuecli-install/</id>
-    <published>2021-05-04T16:00:00.000Z</published>
-    <updated>2021-08-22T00:35:17.007Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://cli.vuejs.org//zh/guide/&quot;&gt;Vue CLI 文档&lt;/a&gt;&lt;br /&gt;
-&lt;br/&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;关于旧版本&lt;/p&gt;
-&lt;p&gt;Vue CLI 的包名称由 &lt;code&gt;vue-cli&lt;/code&gt; 改成了 &lt;code&gt;@vue/cli&lt;/code&gt;。 如果你已经全局安装了旧版本的 &lt;code&gt;vue-cli&lt;/code&gt; (1.x 或 2.x)，你需要先通过 &lt;code&gt;npm uninstall vue-cli -g&lt;/code&gt; 或 &lt;code&gt;yarn global remove vue-cli&lt;/code&gt; 卸载它。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Node 版本要求&lt;/p&gt;
-&lt;p&gt;Vue CLI 4.x 需要 &lt;a href=&quot;https://nodejs.org/&quot;&gt;Node.js&lt;/a&gt; v8.9 或更高版本 (推荐 v10 以上)。你可以使用 &lt;a href=&quot;https://github.com/tj/n&quot;&gt;n&lt;/a&gt;，&lt;a href=&quot;https://github.com/creationix/nvm&quot;&gt;nvm&lt;/a&gt; 或 &lt;a href=&quot;https://github.com/coreybutler/nvm-windows&quot;&gt;nvm-windows&lt;/a&gt; 在同一台电脑中管理多个 Node 版本。&lt;/p&gt;
-&lt;p&gt;可以使用下列任一命令安装这个新的包：&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;escape&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
-    
-    
-    <category term="Vue" scheme="http://ghlih.github.io/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
     <title>ArrayList的扩容机制</title>
     <link href="http://ghlih.github.io/2021/04/20/Java/arraylist-resize/"/>
     <id>http://ghlih.github.io/2021/04/20/Java/arraylist-resize/</id>
@@ -372,9 +372,9 @@
     <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
     
     
-    <category term="ArrayList" scheme="http://ghlih.github.io/tags/ArrayList/"/>
-    
     <category term="Java" scheme="http://ghlih.github.io/tags/Java/"/>
+    
+    <category term="ArrayList" scheme="http://ghlih.github.io/tags/ArrayList/"/>
     
   </entry>
   
