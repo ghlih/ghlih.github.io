@@ -158,7 +158,7 @@
   </url>
   
   <url>
-    <loc>http://ghlih.github.io/tags/ArrayList/</loc>
+    <loc>http://ghlih.github.io/tags/OSS/</loc>
     <lastmod>2021-09-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -172,13 +172,6 @@
   </url>
   
   <url>
-    <loc>http://ghlih.github.io/tags/OSS/</loc>
-    <lastmod>2021-09-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://ghlih.github.io/tags/Upload/</loc>
     <lastmod>2021-09-06</lastmod>
     <changefreq>daily</changefreq>
@@ -186,28 +179,7 @@
   </url>
   
   <url>
-    <loc>http://ghlih.github.io/tags/LinkedList/</loc>
-    <lastmod>2021-09-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://ghlih.github.io/tags/mybatisgenerator/</loc>
-    <lastmod>2021-09-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://ghlih.github.io/tags/plugin/</loc>
-    <lastmod>2021-09-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://ghlih.github.io/tags/mail/</loc>
+    <loc>http://ghlih.github.io/tags/ArrayList/</loc>
     <lastmod>2021-09-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -236,6 +208,34 @@
   
   <url>
     <loc>http://ghlih.github.io/tags/crossorigin/</loc>
+    <lastmod>2021-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://ghlih.github.io/tags/LinkedList/</loc>
+    <lastmod>2021-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://ghlih.github.io/tags/mail/</loc>
+    <lastmod>2021-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://ghlih.github.io/tags/mybatisgenerator/</loc>
+    <lastmod>2021-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://ghlih.github.io/tags/plugin/</loc>
     <lastmod>2021-09-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -291,14 +291,14 @@
   </url>
   
   <url>
-    <loc>http://ghlih.github.io/tags/shortkey/</loc>
+    <loc>http://ghlih.github.io/tags/Mysql/</loc>
     <lastmod>2021-09-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://ghlih.github.io/tags/Mysql/</loc>
+    <loc>http://ghlih.github.io/tags/shortkey/</loc>
     <lastmod>2021-09-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
