@@ -6,7 +6,7 @@
   <link href="http://ghlih.github.io/atom.xml" rel="self"/>
   
   <link href="http://ghlih.github.io/"/>
-  <updated>2021-08-22T00:32:16.744Z</updated>
+  <updated>2021-09-06T12:24:27.091Z</updated>
   <id>http://ghlih.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>手写双向 LinkedList</title>
+    <link href="http://ghlih.github.io/2021/09/06/Java/doubleLinkedList/"/>
+    <id>http://ghlih.github.io/2021/09/06/Java/doubleLinkedList/</id>
+    <published>2021-09-05T16:00:00.000Z</published>
+    <updated>2021-09-06T12:24:27.091Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;手写双向 linkedList&lt;/p&gt;
+&lt;p&gt;&lt;escape&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="http://ghlih.github.io/categories/Tech/"/>
+    
+    
+    <category term="Java" scheme="http://ghlih.github.io/tags/Java/"/>
+    
+    <category term="LinkedList" scheme="http://ghlih.github.io/tags/LinkedList/"/>
+    
+  </entry>
   
   <entry>
     <title>Mysql command</title>
