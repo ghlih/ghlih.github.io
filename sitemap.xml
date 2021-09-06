@@ -137,13 +137,6 @@
 
   
   <url>
-    <loc>http://ghlih.github.io/tags/mail/</loc>
-    <lastmod>2021-09-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://ghlih.github.io/tags/brower/</loc>
     <lastmod>2021-09-06</lastmod>
     <changefreq>daily</changefreq>
@@ -165,7 +158,7 @@
   </url>
   
   <url>
-    <loc>http://ghlih.github.io/tags/OSS/</loc>
+    <loc>http://ghlih.github.io/tags/ArrayList/</loc>
     <lastmod>2021-09-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -173,6 +166,13 @@
   
   <url>
     <loc>http://ghlih.github.io/tags/Java/</loc>
+    <lastmod>2021-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://ghlih.github.io/tags/OSS/</loc>
     <lastmod>2021-09-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -193,13 +193,6 @@
   </url>
   
   <url>
-    <loc>http://ghlih.github.io/tags/ArrayList/</loc>
-    <lastmod>2021-09-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://ghlih.github.io/tags/mybatisgenerator/</loc>
     <lastmod>2021-09-06</lastmod>
     <changefreq>daily</changefreq>
@@ -208,6 +201,13 @@
   
   <url>
     <loc>http://ghlih.github.io/tags/plugin/</loc>
+    <lastmod>2021-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://ghlih.github.io/tags/mail/</loc>
     <lastmod>2021-09-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -242,14 +242,14 @@
   </url>
   
   <url>
-    <loc>http://ghlih.github.io/tags/spring-security/</loc>
+    <loc>http://ghlih.github.io/tags/xml/</loc>
     <lastmod>2021-09-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://ghlih.github.io/tags/xml/</loc>
+    <loc>http://ghlih.github.io/tags/spring-security/</loc>
     <lastmod>2021-09-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
