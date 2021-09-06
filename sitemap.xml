@@ -137,6 +137,13 @@
 
   
   <url>
+    <loc>http://ghlih.github.io/tags/mail/</loc>
+    <lastmod>2021-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://ghlih.github.io/tags/brower/</loc>
     <lastmod>2021-09-06</lastmod>
     <changefreq>daily</changefreq>
@@ -179,13 +186,6 @@
   </url>
   
   <url>
-    <loc>http://ghlih.github.io/tags/ArrayList/</loc>
-    <lastmod>2021-09-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://ghlih.github.io/tags/LinkedList/</loc>
     <lastmod>2021-09-06</lastmod>
     <changefreq>daily</changefreq>
@@ -193,7 +193,7 @@
   </url>
   
   <url>
-    <loc>http://ghlih.github.io/tags/mail/</loc>
+    <loc>http://ghlih.github.io/tags/ArrayList/</loc>
     <lastmod>2021-09-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -242,6 +242,13 @@
   </url>
   
   <url>
+    <loc>http://ghlih.github.io/tags/spring-security/</loc>
+    <lastmod>2021-09-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://ghlih.github.io/tags/xml/</loc>
     <lastmod>2021-09-06</lastmod>
     <changefreq>daily</changefreq>
@@ -264,13 +271,6 @@
   
   <url>
     <loc>http://ghlih.github.io/tags/http/</loc>
-    <lastmod>2021-09-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://ghlih.github.io/tags/spring-security/</loc>
     <lastmod>2021-09-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
